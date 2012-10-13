@@ -1,0 +1,19 @@
+%h1 Listing api_tags
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @api_tags.each do |api_tag|
+    %tr
+      %td= api_tag.name
+      %td= link_to 'Show', api_tag
+      %td= link_to 'Edit', edit_api_tag_path(api_tag)
+      %td= link_to 'Destroy', api_tag, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Tag', new_api_tag_path

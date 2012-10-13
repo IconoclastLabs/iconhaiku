@@ -1,0 +1,23 @@
+%h1 Listing api_nouns
+
+%table
+  %tr
+    %th Name
+    %th Attribution
+    %th License
+    %th
+    %th
+    %th
+
+  - @api_nouns.each do |api_noun|
+    %tr
+      %td= api_noun.name
+      %td= api_noun.attribution
+      %td= api_noun.license
+      %td= link_to 'Show', api_noun
+      %td= link_to 'Edit', edit_api_noun_path(api_noun)
+      %td= link_to 'Destroy', api_noun, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Noun', new_api_noun_path

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @api_noun.name
+%p
+  %b Attribution:
+  = @api_noun.attribution
+%p
+  %b License:
+  = @api_noun.license
+
+= link_to 'Edit', edit_api_noun_path(@api_noun)
+\|
+= link_to 'Back', api_nouns_path

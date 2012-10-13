@@ -1,0 +1,19 @@
+= form_for @api_noun do |f|
+  - if @api_noun.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@api_noun.errors.count, "error")} prohibited this api_noun from being saved:"
+      %ul
+        - @api_noun.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :attribution
+    = f.text_area :attribution
+  .field
+    = f.label :license
+    = f.text_field :license
+  .actions
+    = f.submit 'Save'
