@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: api_haikus
+# Table name: api_tags
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
@@ -8,8 +8,6 @@
 #  updated_at :datetime         not null
 #
 
-require 'spec_helper'
-
-describe Api::Haiku do
-  pending "add some examples to (or delete) #{__FILE__}"
+class Api::Tag < ActiveRecord::Base
+  attr_accessible :name
 end

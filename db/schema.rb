@@ -11,9 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013044525) do
+ActiveRecord::Schema.define(:version => 20121013140942) do
 
   create_table "api_haikus", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "api_nouns", :force => true do |t|
+    t.string   "name"
+    t.text     "attribution"
+    t.string   "license"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "api_tags", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
