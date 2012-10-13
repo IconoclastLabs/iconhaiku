@@ -1,0 +1,19 @@
+%h1 Listing api_haikus
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @api_haikus.each do |api_haiku|
+    %tr
+      %td= api_haiku.name
+      %td= link_to 'Show', api_haiku
+      %td= link_to 'Edit', edit_api_haiku_path(api_haiku)
+      %td= link_to 'Destroy', api_haiku, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Haiku', new_api_haiku_path

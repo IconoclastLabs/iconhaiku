@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @api_tag.name
+
+= link_to 'Edit', edit_api_tag_path(@api_tag)
+\|
+= link_to 'Back', api_tags_path

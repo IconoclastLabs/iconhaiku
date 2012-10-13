@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @api_haiku.name
+
+= link_to 'Edit', edit_api_haiku_path(@api_haiku)
+\|
+= link_to 'Back', api_haikus_path
