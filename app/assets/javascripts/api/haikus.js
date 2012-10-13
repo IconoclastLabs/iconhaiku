@@ -10,8 +10,24 @@ nounApp.directive('whenScrolled', [function($scope){
     });
   };
 }]);
+/*
+ $('#library li.tile').draggable({
+      
+    });
+*/
 
-//nounApp.factory('Nouns', ['$resource', function(){}]);
+nounApp.directive('draggable', function() {
+  return {
+    restrict:'A',
+    link:function(scope,element,attrs){
+      element.draggable({
+        connectToSortable: ".haikuLine",
+        helper: "clone",
+        revert: "invalid"
+      });
+    }
+  };
+});
 
 nounApp.factory('Nouns', ['$resource', function($resource){
   return $resource('api/nouns.json', {}, {'index': {method:'GET', isArray: true } });
@@ -31,11 +47,6 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
             $scope.nouns.push(noun);
           });
         });
-      /*$('#library li.tile').draggable({
-        connectToSortable: ".haikuLine",
-        helper: "clone",
-        revert: "invalid"
-      });*/
       page += 1;
     };
 
@@ -43,6 +54,12 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
     // kick off the initial load
     
     $('#tagSelect').select2({tags:["red", "green"]});  
+    $('#tagSelect').on('change', function(){
+      console.log("tags updated");
+      // reset page position
+      // query loadMore with tag list
+
+    })
     $scope.loadMore();
 }]);
 

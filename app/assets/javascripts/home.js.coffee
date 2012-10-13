@@ -11,10 +11,6 @@ jQuery ->
       #$.post($(@).data('update-url'))
     placeholder: "tileHighlight"
     revert: true
-  $('#library li.tile').draggable
-    connectToSortable: ".haikuLine"
-    helper: "clone"
-    revert: "invalid"
   # stop elements inside draggables from being selected
   $( "ul, li" ).disableSelection()
 
