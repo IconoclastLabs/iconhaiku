@@ -49,6 +49,10 @@ gem "email_spec", ">= 1.2.1", :group => :test
 gem "bootstrap-sass", ">= 2.1.0.0"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 
+group :development do
+  gem 'annotate'
+end
+
 group :production do
   #gem 'mysql2' # If using mysql in development, this can be outside the production group.
   gem 'therubyracer'
