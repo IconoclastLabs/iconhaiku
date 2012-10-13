@@ -16,6 +16,6 @@
 //= require 'underscore-min.js'
 //= require 'angular.min.js'
 //= require 'angular-resource.min.js'
-//= require 'angular-bootstrap.js'
+//= require 'angular-bootstrap.min.js'
 //= require 'api/haikus.js'
 //= require_tree .
