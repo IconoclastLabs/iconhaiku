@@ -20,4 +20,5 @@ jQuery ->
 
 limitRows = -> 
   $(".haikuLine").each ->
-    $(@).children().slice($(@).data('limit')).slideUp()
+    $(@).children().slice($(@).data('limit')).slideUp "normal", ->
+      $(@).remove()
