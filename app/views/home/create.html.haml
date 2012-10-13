@@ -30,6 +30,7 @@
     {{title}}
   %ul#library
     %li.tile{:'ng-repeat'=>'noun in nouns'}
-      Name: {{noun.name}}, Attribution: {{noun.attribution}}
+      %img{:'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
+      -#Name: {{noun.name}}, Attribution: {{noun.attribution}}
 
 

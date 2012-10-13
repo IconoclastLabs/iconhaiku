@@ -20,11 +20,11 @@ nounApp.factory('Nouns', ['$resource', function($resource){
 
 nounApp.controller('NounCtrl', ['$scope', 'Nouns', function($scope, Nouns){
     $scope.title = "Icon Library";
-    $scope.nouns = [{name:'Tacos',attribution:"Mexicans"},
+    /*$scope.nouns = [{name:'Tacos',attribution:"Mexicans"},
                     {name:'Burger',attribution: "USA"},
                     {name:'Spongebob', attribution: "Crack"},
                     {name:'Sherlock',attribution:"England"},
-                    {name:'Robot',attribution: "Chicken"}];
-    $scope.factory = Nouns.index();
+                    {name:'Robot',attribution: "Chicken"}];*/
+    $scope.nouns = Nouns.index();
 }]);
 
