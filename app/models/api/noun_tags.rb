@@ -1,4 +1,5 @@
 class Api::NounTags < ActiveRecord::Base
-  belongs_to :noun
-  belongs_to :tag
+  attr_accessible :noun_id, :tag_id
+  belongs_to :nouns
+  belongs_to :tags
 end
