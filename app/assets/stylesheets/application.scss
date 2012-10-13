@@ -58,6 +58,33 @@ footer
 
 // SHOULD BE IN HOME.CSS.SCSS ***************************************
 
+ul
+{
+  list-style-type: none;
+}
+
+.tileHighlight
+{
+  display: inline-block;
+  cursor: move;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+  margin: 2px;
+  border: 1px dashed #777;
+  border-radius: 5px;
+  background: #f8ffe8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f8ffe8 0%, #e3f5ab 33%, #b7df2d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8ffe8), color-stop(33%,#e3f5ab), color-stop(100%,#b7df2d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f8ffe8 0%,#e3f5ab 33%,#b7df2d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f8ffe8 0%,#e3f5ab 33%,#b7df2d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f8ffe8 0%,#e3f5ab 33%,#b7df2d 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f8ffe8 0%,#e3f5ab 33%,#b7df2d 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#b7df2d',GradientType=0 ); /* IE6-9 */
+  margin-bottom: -6%;
+  opacity: 0.7;
+}
+
 li.tile
 {
   display: inline-block;
@@ -66,6 +93,7 @@ li.tile
   height: 40px;
   width: 40px;
   margin: 2px;
+  border: 1px solid #ccc;
   border-radius: 5px;
   background: #e4efc0; /* Old browsers */
   background: -moz-linear-gradient(top,  #e4efc0 0%, #abbd73 100%); /* FF3.6+ */
