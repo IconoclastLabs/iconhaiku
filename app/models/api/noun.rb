@@ -16,12 +16,12 @@ class Api::Noun < ActiveRecord::Base
   has_many :noun_tags
   has_many :tags, through: :noun_tags
   has_attached_file :icon, 
-                    styles: { :medium => "300x300>", :thumb => "100x100>" },
-                    path: "icons/:id/:style/:filename"
+                    styles: { :medium => "300x300>", :thumb => "100x100>" }
+                    #,path: "icons/:id/:style/:filename"
 
   #virtual attributeto expose the icon url to the json method
   def icon_url
-    icon.url(:thumb)
+    icon.url(:original)
   end
 
   def as_json(options={})
