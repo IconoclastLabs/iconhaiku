@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013143725) do
+ActiveRecord::Schema.define(:version => 20121013155148) do
 
   create_table "api_haikus", :force => true do |t|
     t.string   "name"
@@ -34,25 +34,32 @@ ActiveRecord::Schema.define(:version => 20121013143725) do
     t.integer  "line3_slot3_id"
     t.integer  "line3_slot4_id"
     t.integer  "line3_slot5_id"
+    t.string   "slug"
+  end
+
+  add_index "api_haikus", ["slug"], :name => "index_api_haikus_on_slug", :unique => true
+
+  create_table "api_noun_tags", :id => false, :force => true do |t|
+    t.integer "noun_id"
+    t.integer "tag_id"
   end
 
   create_table "api_nouns", :force => true do |t|
     t.string   "name"
     t.text     "attribution"
     t.string   "license"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "api_tags", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "noun_tags", :id => false, :force => true do |t|
-    t.integer "noun_id"
-    t.integer "tag_id"
   end
 
 end
