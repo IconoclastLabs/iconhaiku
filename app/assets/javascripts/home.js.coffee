@@ -9,3 +9,7 @@ jQuery ->
     update: ->
       alert("Updated")
       #$.post($(@).data('update-url'))
+  $('#library li.tile').draggable
+    connectToSortable: ".haikuLine"
+    helper: "clone"
+
