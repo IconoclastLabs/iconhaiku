@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'friendly_id'
 gem 'paperclip'
 gem "activeadmin"
+gem "kaminari"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

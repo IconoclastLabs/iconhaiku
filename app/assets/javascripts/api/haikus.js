@@ -11,14 +11,20 @@ nounApp.directive('whenScrolled', [function($scope){
   };
 }]);
 
-//nounApp.factory('Nouns');
+//nounApp.factory('Nouns', ['$resource', function(){}]);
 
-nounApp.controller('NounCtrl', ['$scope', function($scope){
+nounApp.factory('Nouns', ['$resource', function($resource){
+  return $resource('api/nouns.json', {}, {'index': {method:'GET', isArray: true } });
+}]);
+
+
+nounApp.controller('NounCtrl', ['$scope', 'Nouns', function($scope, Nouns){
     $scope.title = "Icon Library";
-    $scope.nouns = [{name:'Tacos',attribution:"Mexicans"},
+    /*$scope.nouns = [{name:'Tacos',attribution:"Mexicans"},
                     {name:'Burger',attribution: "USA"},
                     {name:'Spongebob', attribution: "Crack"},
                     {name:'Sherlock',attribution:"England"},
-                    {name:'Robot',attribution: "Chicken"}];
+                    {name:'Robot',attribution: "Chicken"}];*/
+    $scope.nouns = Nouns.index();
 }]);
 

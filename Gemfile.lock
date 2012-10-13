@@ -232,6 +232,7 @@ DEPENDENCIES
   haml-rails (>= 0.3.5)
   hpricot (>= 0.8.6)
   jquery-rails
+  kaminari
   paperclip
   pry
   pry-rails
