@@ -11,7 +11,7 @@ nounApp.directive('whenScrolled', [function($scope){
   };
 }]);
 
-//nounApp.factory('Nouns');
+//nounApp.factory('Nouns', ['$resource']);
 
 nounApp.controller('NounCtrl', ['$scope', function($scope){
     $scope.title = "Icon Library";

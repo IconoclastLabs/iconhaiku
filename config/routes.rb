@@ -3,7 +3,11 @@ IconHaiku::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  namespace :api do resources :haikus end
+  namespace :api do 
+    resources :haikus 
+    resources :tags
+    resources :nouns
+  end
 
   get "home/index"
   match "create" => 'home#create'
