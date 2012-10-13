@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require 'jquery-ui-1.9.0.custom.min.js'
+//= require 'underscore-min.js'
 //= require_tree .
