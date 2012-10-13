@@ -25,13 +25,11 @@
         %li.tile Fifteenth
         %li.tile Sixteenth
         %li.tile Seventeenth
-.span3
-  %h3 Library
+.span3{ :'ng-app' => 'NounApp', :'ng-controller' => 'NounCtrl' }
+  %h3
+    {{title}}
   %ul#library
-    %li.tile Tacos
-    %li.tile Burger
-    %li.tile Spongebob
-    %li.tile Sherlock
-    %li.tile Robot
+    %li.tile{:'ng-repeat'=>'noun in nouns'}
+      Name: {{noun.name}}, Attribution: {{noun.attribution}}
 
 

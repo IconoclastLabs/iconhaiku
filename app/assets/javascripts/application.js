@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require 'jquery-ui-1.9.0.custom.min.js'
 //= require 'underscore-min.js'
+//= require 'angular.min.js'
+//= require 'angular-resource.min.js'
+//= require 'angular-bootstrap.min.js'
+//= require 'api/haikus.js'
 //= require_tree .
