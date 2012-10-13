@@ -7,8 +7,9 @@ jQuery ->
   $('#line1, #line2, #line3').sortable
     connectWith: ".haikuLine"
     update: ->
-      alert("Updated")
+      #alert("Updated")
       #$.post($(@).data('update-url'))
+    placeholder: "tileHighlight"
   $('#library li.tile').draggable
     connectToSortable: ".haikuLine"
     helper: "clone"
