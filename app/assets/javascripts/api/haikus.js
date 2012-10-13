@@ -50,15 +50,13 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
       page += 1;
     };
 
-
-    // kick off the initial load
-    
+    // kick off the initial load    
     $('#tagSelect').select2({tags:["red", "green"]});  
     $('#tagSelect').on('change', function(){
       console.log("tags updated");
       // reset page position
       // query loadMore with tag list
-
+      console.log($('#tagSelect'));
     })
     $scope.loadMore();
 }]);
