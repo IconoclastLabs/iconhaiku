@@ -2,6 +2,7 @@ IconHaiku::Application.routes.draw do
   namespace :api do resources :haikus end
 
   get "home/index"
+  match "create" => 'home#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
