@@ -11,9 +11,19 @@ jQuery ->
       #$.post($(@).data('update-url'))
     placeholder: "tileHighlight"
     revert: true
+    change: (event, ui) ->
+      showPendingDoom()
   # stop elements inside draggables from being selected
   $( "ul, li" ).disableSelection()
 
 limitRows = -> 
   $(".haikuLine").each ->
-    $(@).children().slice($(@).data('limit')).slideUp()
+    $(@).children().removeClass("dying")
+    $(@).children().slice($(@).data('limit')).slideUp "normal", ->
+      $(@).remove()
+
+showPendingDoom = (event, ui) ->
+  $(".haikuLine").each ->
+    $(@).children().removeClass("dying")
+    $(@).children().not(".ui-sortable-helper").slice($(@).data('limit')).addClass("dying")
+
