@@ -7,6 +7,14 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
 %body
-  Container Body     
-  = yield
+  .container
+    %header.row
+      .pull-center.span12
+        = image_tag "haiku_header.png"
+    #main.row
+      .span12
+        = yield
+    %footer.row
+      .span12
+        %p I foot things!
 
