@@ -4,7 +4,8 @@
 #
 
 jQuery ->
-  $('#line1').sortable
+  $('#line1, #line2, #line3').sortable
+    connectWith: ".haikuLine"
     update: ->
       alert("Updated")
       #$.post($(@).data('update-url'))
