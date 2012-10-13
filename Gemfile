@@ -51,6 +51,8 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 
 group :development do
   gem 'annotate'
+  gem 'pry'
+  gem 'pry-rails'
 end
 
 group :production do

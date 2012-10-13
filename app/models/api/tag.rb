@@ -10,5 +10,5 @@
 
 class Api::Tag < ActiveRecord::Base
   attr_accessible :name
-  has_and_belongs_to_many :nouns
+  has_many :nouns, through: :noun_tags
 end
