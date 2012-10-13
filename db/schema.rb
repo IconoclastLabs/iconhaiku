@@ -11,12 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013140942) do
+ActiveRecord::Schema.define(:version => 20121013142808) do
 
   create_table "api_haikus", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "line1_slot1_id"
+    t.integer  "line1_slot2_id"
+    t.integer  "line1_slot3_id"
+    t.integer  "line1_slot4_id"
+    t.integer  "line1_slot5_id"
+    t.integer  "line2_slot1_id"
+    t.integer  "line2_slot2_id"
+    t.integer  "line2_slot3_id"
+    t.integer  "line2_slot4_id"
+    t.integer  "line2_slot5_id"
+    t.integer  "line2_slot6_id"
+    t.integer  "line2_slot7_id"
+    t.integer  "line3_slot1_id"
+    t.integer  "line3_slot2_id"
+    t.integer  "line3_slot3_id"
+    t.integer  "line3_slot4_id"
+    t.integer  "line3_slot5_id"
   end
 
   create_table "api_nouns", :force => true do |t|
