@@ -11,6 +11,8 @@ jQuery ->
       #$.post($(@).data('update-url'))
     placeholder: "tileHighlight"
     revert: true
+    change: (event, ui) ->
+      showPendingDoom()
   $('#library li.tile').draggable
     connectToSortable: ".haikuLine"
     helper: "clone"
@@ -20,5 +22,13 @@ jQuery ->
 
 limitRows = -> 
   $(".haikuLine").each ->
+    $(@).children().removeClass("dying")
     $(@).children().slice($(@).data('limit')).slideUp "normal", ->
       $(@).remove()
+
+showPendingDoom = (event, ui) ->
+  $(".haikuLine").each ->
+    $(@).children().removeClass("dying")
+    $(@).children().not(".ui-sortable-helper").slice($(@).data('limit')).addClass("dying")
+
+

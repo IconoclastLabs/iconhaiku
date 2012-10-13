@@ -106,3 +106,10 @@ li.tile
   background: linear-gradient(to bottom,  #e4efc0 0%,#abbd73 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', endColorstr='#abbd73',GradientType=0 ); /* IE6-9 */
 }
+
+.dying
+{
+  border: 3px dotted #f00;
+  opacity: 0.5;
+  margin-bottom: -7%;;
+}
