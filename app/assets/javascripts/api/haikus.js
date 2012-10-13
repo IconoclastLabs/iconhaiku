@@ -21,8 +21,6 @@ nounApp.factory('Tags', ['$resource', function($resource){
 }]);
 
 nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Nouns, Tags){
-    $scope.title = "Icon Library";
-
     var page = 1;
     $scope.nouns = [];
     $scope.loadMore = function(){
@@ -43,7 +41,8 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
 
 
     // kick off the initial load
-    $scope.loadMore();
+    
     $('#tagSelect').select2({tags:["red", "green"]});  
+    $scope.loadMore();
 }]);
 

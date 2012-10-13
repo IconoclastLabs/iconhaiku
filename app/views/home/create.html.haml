@@ -1,5 +1,5 @@
 .span8
-  %h3.script-font Icon Haiku Generator
+  %h3.script-font Icon Haiku
   %strong Drag and drop some shiat!
   %ul#haiku{:"data-update-url" => "TODO_SORT_SAVE"}
     %li
@@ -26,10 +26,11 @@
         %li.tile Sixteenth
         %li.tile Seventeenth
 .span3{ :'ng-app' => 'NounApp', :'ng-controller' => 'NounCtrl' }
-  %h3.script-font
-    {{title}}
+  %%h3.script-font
+    Choose wisely:
   
-  %input{type:"hidden", id:"tagSelect", style:"width:300px", value:"brown, red, green", width:"100"}
+  .tags
+    %input{type:"hidden", id:"tagSelect", style:"width:250px", value:"brown, red, green"}
 
   %ul#library{:'when-scrolled' => "loadMore()"}
     %li.tile{:'ng-repeat'=>'noun in nouns'}
