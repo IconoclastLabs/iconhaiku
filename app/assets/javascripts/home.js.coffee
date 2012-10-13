@@ -13,10 +13,6 @@ jQuery ->
     revert: true
     change: (event, ui) ->
       showPendingDoom()
-  $('#library li.tile').draggable
-    connectToSortable: ".haikuLine"
-    helper: "clone"
-    revert: "invalid"
   # stop elements inside draggables from being selected
   $( "ul, li" ).disableSelection()
 
@@ -30,5 +26,4 @@ showPendingDoom = (event, ui) ->
   $(".haikuLine").each ->
     $(@).children().removeClass("dying")
     $(@).children().not(".ui-sortable-helper").slice($(@).data('limit')).addClass("dying")
-
 

@@ -33,7 +33,7 @@
     %input{type:"hidden", id:"tagSelect", style:"width:250px", value:"brown, red, green"}
 
   %ul#library{:'when-scrolled' => "loadMore()"}
-    %li.tile{:'ng-repeat'=>'noun in nouns'}
+    %li.tile{:'ng-repeat'=>'noun in nouns', draggable: ""}
       %img{:'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
       -#Name: {{noun.name}}, Attribution: {{noun.attribution}}
 .span12
