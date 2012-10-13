@@ -7,7 +7,6 @@ jQuery ->
   $('#line1, #line2, #line3').sortable
     connectWith: ".haikuLine"
     update: ->
-      #alert("Updated")
       limitRows()
       #$.post($(@).data('update-url'))
     placeholder: "tileHighlight"
@@ -19,4 +18,4 @@ jQuery ->
 
 limitRows = -> 
   $(".haikuLine").each ->
-    $(@).children().slice(3).slideUp()
+    $(@).children().slice($(@).data('limit')).slideUp()
