@@ -12,4 +12,6 @@
 
 class Api::Noun < ActiveRecord::Base
   attr_accessible :attribution, :license, :name
+  has_and_belongs_to_many :tags
+
 end
