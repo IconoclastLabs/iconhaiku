@@ -16,11 +16,13 @@ nounApp.directive('whenScrolled', [function($scope){
 nounApp.factory('Nouns', ['$resource', function($resource){
   return $resource('api/nouns.json', {}, {'index': {method:'GET', isArray: true } });
 }]);
+nounApp.factory('Tags', ['$resource', function($resource){
+  return $resource('api/tags.json', {}, {'index': {method:'GET', isArray: true }});
+}]);
 
-
-nounApp.controller('NounCtrl', ['$scope', 'Nouns', function($scope, Nouns){
+nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Nouns, Tags){
     $scope.title = "Icon Library";
-    
+
     var page = 1;
     $scope.nouns = [];
     $scope.loadMore = function(){
@@ -31,17 +33,17 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', function($scope, Nouns){
             $scope.nouns.push(noun);
           });
         });
+      /*$('#library li.tile').draggable({
+        connectToSortable: ".haikuLine",
+        helper: "clone",
+        revert: "invalid"
+      });*/
       page += 1;
     };
 
-    /*$scope.nouns = [{name:'Tacos',attribution:"Mexicans"},
-                    {name:'Burger',attribution: "USA"},
-                    {name:'Spongebob', attribution: "Crack"},
-                    {name:'Sherlock',attribution:"England"},
-                    {name:'Robot',attribution: "Chicken"}];*/
-    //$scope.nouns = Nouns.index();
+
     // kick off the initial load
     $scope.loadMore();
-    //$('#tagSelect').select2();  
+    $('#tagSelect').select2({tags:["red", "green"]});  
 }]);
 

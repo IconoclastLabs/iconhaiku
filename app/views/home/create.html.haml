@@ -28,7 +28,9 @@
 .span3{ :'ng-app' => 'NounApp', :'ng-controller' => 'NounCtrl' }
   %h3.script-font
     {{title}}
-  %select#tagSelect
+  
+  %input{type:"hidden", id:"tagSelect", style:"width:300px", value:"brown, red, green", width:"100"}
+
   %ul#library{:'when-scrolled' => "loadMore()"}
     %li.tile{:'ng-repeat'=>'noun in nouns'}
       %img{:'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
