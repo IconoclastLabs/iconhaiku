@@ -32,5 +32,10 @@
     %li.tile{:'ng-repeat'=>'noun in nouns'}
       %img{:'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
       -#Name: {{noun.name}}, Attribution: {{noun.attribution}}
-
+.span12
+  %a.btn
+    %h4.script-font
+      = image_tag "save.png"
+      Save Haiku
+.clearfix
 
