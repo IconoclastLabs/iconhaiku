@@ -8,6 +8,7 @@ jQuery ->
     connectWith: ".haikuLine"
     update: ->
       #alert("Updated")
+      limitRows()
       #$.post($(@).data('update-url'))
     placeholder: "tileHighlight"
     revert: true
@@ -16,3 +17,6 @@ jQuery ->
     helper: "clone"
     revert: "invalid"
 
+limitRows = -> 
+  $(".haikuLine").each ->
+    $(@).children().slice(3).slideUp()
