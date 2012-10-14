@@ -9,6 +9,7 @@ jQuery ->
     update: ->
       limitRows()
     placeholder: "tileHighlight"
+    cursor: "move"
     revert: true
     change: (event, ui) ->
       showPendingDoom()
