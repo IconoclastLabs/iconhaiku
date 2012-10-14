@@ -17,6 +17,15 @@ jQuery ->
   $("ul, li").disableSelection()
   #activate save button
   $('#saveButton').click saveHaiku
+  fetchNewHaiku()
+
+fetchNewHaiku = ->
+  $.ajax '/api/haikus/new.json',
+  success  : (res, status, xhr) ->
+    console.log(res)
+  error    : (xhr, status, err) ->
+  complete : (xhr, status) ->
+
 
 limitRows = -> 
   $(".haikuLine").each ->
@@ -36,7 +45,7 @@ saveHaiku = ->
   line2 = readLine("line2")
   line3 = readLine("line3")
   haiku = line1 + line2 + line3
-  alert(haiku)
+  console.log (haiku)
 
 readLine = (line) ->
   index = 0
