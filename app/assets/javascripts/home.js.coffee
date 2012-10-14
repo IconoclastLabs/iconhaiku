@@ -58,6 +58,7 @@ saveHaiku = ->
     data: sendJSON
     success: (res, status, xhr) ->
       console.log(res)
+      window.location = "/share/#{res.slug}"
 
 readLine = (line) ->
   $("#" + line).children().each (index) ->
