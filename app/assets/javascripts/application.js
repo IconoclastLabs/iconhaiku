@@ -19,6 +19,7 @@
 //= require 'angular-resource.min.js'
 //= require 'angular-bootstrap.min.js'
 //= require 'api/haikus.js'
+//= require 'bootstrap.min.js'
 //= require_tree .
 
 /*  Fetch CS for old Haikus
