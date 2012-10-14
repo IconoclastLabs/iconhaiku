@@ -64,4 +64,4 @@ readLine = (line) ->
   $("#" + line).children().each (index) ->
     i = index + 1
     key = line + "_slot" + i + "_id"
-    haiku[key] = $(@).attr("id")
+    haiku[key] = $(@).children().attr("id")
