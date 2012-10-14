@@ -23,6 +23,7 @@
 #  line3_slot3_id :integer
 #  line3_slot4_id :integer
 #  line3_slot5_id :integer
+#  slug           :string(255)
 #
 
 class Api::Haiku < ActiveRecord::Base
