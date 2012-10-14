@@ -9,6 +9,7 @@ jQuery ->
     update: ->
       limitRows()
       #$.post($(@).data('update-url'))
+      #alert($(@).sortable('serialize'))
     placeholder: "tileHighlight"
     revert: true
     change: (event, ui) ->
