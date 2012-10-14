@@ -1,8 +1,28 @@
-%h1.span6 What is Icon Haiku?
+.span12#buffer
+  .span1
+    = image_tag "box.png"
+  %h1.span6.script-font What is Icon Haiku?
 .span12
-  %p Create fun, interesting and quirky Haiku with your friends, but do it the rich and cutting imagery of icons.
-  %p Enough talk, look at these recently created haikus!
+  %p Poetry 2.0. Quirky Haiku with the rich and cutting imagery of icons.  
+  .span2
+    = image_tag "generator.png"
+  .span9
+    Use our 
+    %em 
+      Icon Haiku
+    generator and generate your own obscure image poetry, or just view the work of others... whatever works for you.
+    %p 
+      Click the 
+      %strong Create Your Own
+      button to try it out now.
+  .span6
+    = link_to "<i class='icon-leaf icon-white'></i> Start Your Own".html_safe, create_path, {class: "btn btn-success"}
+  .span9
+    %p
+    %p
+      %strong OR
+    %p
+    %p
+      Enough talk! look at these recently created haikus!
 .span12
   %h1 HAIKU GOES HERE
-.span6
-  = link_to "<i class='icon-leaf icon-white'></i> Create Here".html_safe, create_path, {class: "btn btn-success"}
