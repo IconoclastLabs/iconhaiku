@@ -8,14 +8,14 @@ jQuery ->
     connectWith: ".haikuLine"
     update: ->
       limitRows()
-      #$.post($(@).data('update-url'))
-      #alert($(@).sortable('serialize'))
     placeholder: "tileHighlight"
     revert: true
     change: (event, ui) ->
       showPendingDoom()
   # stop elements inside draggables from being selected
-  $( "ul, li" ).disableSelection()
+  $("ul, li").disableSelection()
+  #activate save button
+  $('#saveButton').click saveHaiku
 
 limitRows = -> 
   $(".haikuLine").each ->
@@ -28,3 +28,9 @@ showPendingDoom = (event, ui) ->
     $(@).children().removeClass("dying")
     $(@).children().not(".ui-sortable-helper").slice($(@).data('limit')).addClass("dying")
 
+saveHaiku = ->
+  #$.post($(@).data('update-url'))
+  #alert($(@).sortable('serialize'))
+  haiku = _.map $("#line1, #line2, #line3").children(), (child) ->
+    $(child).text()
+  alert(haiku)
