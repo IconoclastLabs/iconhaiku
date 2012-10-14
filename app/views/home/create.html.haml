@@ -26,12 +26,12 @@
           %li.tile#line3_15 Fifteenth
           %li.tile#line3_16 Sixteenth
           %li.tile#line3_17 Seventeenth
-  .span3{ :'ng-app' => 'NounApp', :'ng-controller' => 'NounCtrl' }
+  .span3#app{ :'ng-app' => 'NounApp', :'ng-controller' => 'NounCtrl' }
     %%h3.script-font
       Choose wisely:
     
     .tags
-      %input{type:"hidden", id:"tagSelect", style:"width:250px", value:"brown, red, green"}
+      %input{type:"hidden", id:"tagSelect", style:"width:250px", value:""}
 
     %ul#library{:'when-scrolled' => "loadMore()"}
       %li.tile{:'ng-repeat'=>'noun in nouns', draggable: ""}
