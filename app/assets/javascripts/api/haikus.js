@@ -39,8 +39,10 @@ nounApp.factory('Tags', ['$resource', function($resource){
 nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Nouns, Tags){
     var page = 1;
     $scope.nouns = [];
-    $scope.loadMore = function(){
-      console.log("Try to load more icons");
+    $scope.tags = [];
+    $scope.loadMore = function(param){
+      //console.log("Try to load more icons");
+      console.log(param);
       Nouns.index({page: page}, 
         function(nouns){
           _.each(nouns, function(noun){
@@ -49,15 +51,30 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
         });
       page += 1;
     };
+    $scope.loadTags = function(){
+      console.log("Loading tags");
+      Tags.index({}, function(tags){
+        _.each(tags, function(tag){
+          //console.log(tag.name)
+          $scope.tags.push(tag.name);
+        });
+      });
+    };
 
-    // kick off the initial load    
-    $('#tagSelect').select2({tags:["red", "green"]});  
     $('#tagSelect').on('change', function(){
       console.log("tags updated");
       // reset page position
+      $scope.nouns = [];
+      $scope.loadMore("test");
       // query loadMore with tag list
       console.log($('#tagSelect'));
     })
-    $scope.loadMore();
+    
+    var dfd = $.Deferred();
+    dfd.done(
+            $scope.loadMore(),
+            $scope.loadTags(),
+            $('#tagSelect').select2({tags:$scope.tags})
+    );
 }]);
 
