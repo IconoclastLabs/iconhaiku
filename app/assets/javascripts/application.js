@@ -20,3 +20,14 @@
 //= require 'angular-bootstrap.min.js'
 //= require 'api/haikus.js'
 //= require_tree .
+
+/*  Fetch CS for old Haikus
+fetchOldHaiku = (haiku_id) ->
+  url = "/api/haikus/#{haiku_id}.json"
+  $.ajax url,
+  success  : (res, status, xhr) ->
+    console.log(res)
+  error    : (xhr, status, err) ->
+    console.log error
+  complete : (xhr, status) ->
+*/
