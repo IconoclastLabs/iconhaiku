@@ -74,5 +74,4 @@ pickle-email-*.html
 
 # vim artifacts
 **.swp
-nouns.rake
 zeus.json
