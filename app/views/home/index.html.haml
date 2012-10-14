@@ -5,6 +5,4 @@
 .span12
   %h1 HAIKU GOES HERE
 .span6
-  %a.btn.btn-success
-    %i.icon-leaf.icon-white
-    Click Here to Create One Now
+  = link_to "<i class='icon-leaf icon-white'></i> Create Here".html_safe, create_path, {class: "btn btn-success"}
