@@ -103,6 +103,12 @@ li.tile
   background: -ms-linear-gradient(top,  #e4efc0 0%,#abbd73 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #e4efc0 0%,#abbd73 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', endColorstr='#abbd73',GradientType=0 ); /* IE6-9 */
+  text-align: center;
+
+  img
+  {
+    height: 100%;
+  }
 }
 
 .dying
