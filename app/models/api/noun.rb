@@ -17,7 +17,7 @@
 
 class Api::Noun < ActiveRecord::Base
 
-  attr_accessible :attribution, :license, :name, :icon
+  attr_accessible :attribution, :license, :name, :icon, :source_url
   has_many :noun_tags
   has_many :tags, through: :noun_tags
   has_attached_file :icon, 

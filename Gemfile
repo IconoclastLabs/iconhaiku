@@ -54,6 +54,8 @@ group :development do
   gem 'annotate'
   gem 'pry'
   gem 'pry-rails'
+  gem 'nokogiri'
+  gem 'mechanize'
 end
 
 group :production do
