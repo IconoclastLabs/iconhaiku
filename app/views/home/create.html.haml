@@ -1,45 +1,52 @@
-.span8
-  %h3.script-font Icon Haiku
-  %strong Drag and drop some shiat!
-  %ul#haiku{:"data-update-url" => "TODO_SORT_SAVE"}
-    %li
-      %ul#line1.haikuLine{:"data-limit" => 5}
-        %li.tile#line1_1 First
-        %li.tile#line1_2 Second
-        %li.tile#line1_3 Third
-        %li.tile#line1_4 Fourth
-        %li.tile#line1_5 Fifth
-    %li
-      %ul#line2.haikuLine{:"data-limit" => 7}
-        %li.tile#line2_6 Sixth
-        %li.tile#line2_7 Seventh
-        %li.tile#line2_8 Eigth
-        %li.tile#line2_9 Ninth
-        %li.tile#line2_10 Tenth
-        %li.tile#line2_11 Eleventh
-        %li.tile#line2_12 Twelveth
-    %li  
-      %ul#line3.haikuLine{:"data-limit" => 5}
-        %li.tile#line3_13 Thirteenth
-        %li.tile#line3_14 Fourteenth
-        %li.tile#line3_15 Fifteenth
-        %li.tile#line3_16 Sixteenth
-        %li.tile#line3_17 Seventeenth
-.span3{ :'ng-app' => 'NounApp', :'ng-controller' => 'NounCtrl' }
-  %%h3.script-font
-    Choose wisely:
-  
-  .tags
-    %input{type:"hidden", id:"tagSelect", style:"width:250px", value:"brown, red, green"}
+.row
+  .span8
+    %h3.script-font Icon Haiku
+    %strong Drag and drop some shiat!
+    %ul#haiku{:"data-update-url" => "TODO_SORT_SAVE"}
+      %li
+        %ul#line1.haikuLine{:"data-limit" => 5}
+          %li.tile#24 First
+          %li.tile#2 Second
+          %li.tile#34 Third
+          %li.tile#223 Fourth
+          %li.tile#777 Fifth
+      %li
+        %ul#line2.haikuLine{:"data-limit" => 7}
+          %li.tile#line2_6 Sixth
+          %li.tile#line2_7 Seventh
+          %li.tile#line2_8 Eigth
+          %li.tile#line2_9 Ninth
+          %li.tile#line2_10 Tenth
+          %li.tile#line2_11 Eleventh
+          %li.tile#line2_12 Twelveth
+      %li  
+        %ul#line3.haikuLine{:"data-limit" => 5}
+          %li.tile#line3_13 Thirteenth
+          %li.tile#line3_14 Fourteenth
+          %li.tile#line3_15 Fifteenth
+          %li.tile#line3_16 Sixteenth
+          %li.tile#line3_17 Seventeenth
+  .span3{ :'ng-app' => 'NounApp', :'ng-controller' => 'NounCtrl' }
+    %%h3.script-font
+      Choose wisely:
+    
+    .tags
+      %input{type:"hidden", id:"tagSelect", style:"width:250px", value:"brown, red, green"}
 
-  %ul#library{:'when-scrolled' => "loadMore()"}
-    %li.tile{:'ng-repeat'=>'noun in nouns', draggable: ""}
-      %img{:'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
-      -#Name: {{noun.name}}, Attribution: {{noun.attribution}}
-.span12
-  %a.btn
-    %h4.script-font
-      = image_tag "save.png"
-      Save Haiku
-.clearfix
+    %ul#library{:'when-scrolled' => "loadMore()"}
+      %li.tile{:'ng-repeat'=>'noun in nouns', draggable: ""}
+        %img{:'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
+        -#Name: {{noun.name}}, Attribution: {{noun.attribution}}
+.row.well
+  %h4.span2
+    Title Your Haiku
+  .span4
+    %input#haikuTitle{type: "text", required: "required"}
+.row  
+  .span12
+    %a#saveButton.btn
+      %h4.script-font
+        = image_tag "save.png"
+        Save Haiku
+  .clearfix
 
