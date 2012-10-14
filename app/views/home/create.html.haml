@@ -35,7 +35,7 @@
 
     %ul#library{:'when-scrolled' => "loadMore()"}
       %li.tile{:'ng-repeat'=>'noun in nouns', draggable: ""}
-        %img{:id => "{{noun.id}}", :'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
+        %img{:id => "{{noun.id}}", :rel => "tooltip",:'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
         -#Name: {{noun.name}}, Attribution: {{noun.attribution}}
 .row.well
   %h4.span2

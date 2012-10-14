@@ -44,7 +44,8 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
       //console.log("Try to load more icons");
       console.log(tags);
       Nouns.index({
-        page: page
+          page: page,
+          tags: tags
         }, 
         function(nouns){
           _.each(nouns, function(noun){
@@ -66,9 +67,12 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
     $('#tagSelect').on('change', function(){
       console.log("tags updated");
       // reset page position
+      page = 1
       $scope.nouns = [];
       $scope.$apply();
       var input_tags = $('#tagSelect').val().split(",");
+      //var params = $.param(array={tags: input_tags});
+      //console.log($.param(array={tags: input_tags}));
       $scope.loadMore(input_tags);
       // query loadMore with tag list
       //console.log($('#tagSelect'));
