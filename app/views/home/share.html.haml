@@ -4,7 +4,27 @@
       = @haiku.name
   .row
     .span11.offset1
-      Test
+      = @haiku.line1_slot1_id
+      = @haiku.line1_slot2_id 
+      = @haiku.line1_slot3_id 
+      = @haiku.line1_slot4_id 
+      = @haiku.line1_slot5_id 
+      = @haiku.line2_slot1_id 
+      = @haiku.line2_slot2_id 
+      = @haiku.line2_slot3_id 
+      = @haiku.line2_slot4_id 
+      = @haiku.line2_slot5_id 
+      = @haiku.line2_slot6_id 
+      = @haiku.line2_slot7_id 
+      = @haiku.line3_slot1_id 
+      = @haiku.line3_slot2_id 
+      = @haiku.line3_slot3_id 
+      = @haiku.line3_slot4_id 
+      = @haiku.line3_slot5_id
   .row
     .span12
       Share this on Twitter!
+      %a.twitter-share-button{href:"https://twitter.com/share", :'data-text'=>"Checkout this Icon Haiku", :'data-url' => "http://www.iconhaiku.com/share/#{@haiku.slug}",:'data-size'=>"large", :'data-hashtags' => "iconhaiku"}
+        Tweet
+        = render('twitter')
+        
