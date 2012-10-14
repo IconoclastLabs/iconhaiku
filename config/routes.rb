@@ -11,7 +11,7 @@ IconHaiku::Application.routes.draw do
 
   get "home/index"
   match "create" => 'home#create'
-
+  match "share" => "home#share"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

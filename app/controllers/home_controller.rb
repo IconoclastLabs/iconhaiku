@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def create
   end
+
+  def share
+  end
 end

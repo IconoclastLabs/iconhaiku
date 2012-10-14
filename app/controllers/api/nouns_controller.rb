@@ -2,13 +2,32 @@ class Api::NounsController < ApplicationController
   # GET /api/nouns
   # GET /api/nouns.json
   def index
-    @api_nouns = Api::Noun.page params[:page]
+    unless params[:tags].empty?
+      @tag_names = params[:tags].split(",").flatten
+      @tags = Api::Tag.find_all_by_name(@tag_names)
+      @nouns = []
+      @tags.each do |tag|
+        @nouns = tag.nouns.map do |noun|
+          p noun
+          @nouns.push(noun.id)
+        end
+      end
 
+
+      @api_nouns = Api::Noun.find_all_by_name(@tag_names)
+
+      @api_nouns.push Api::Noun.find_all_by_id(@nouns)
+      @api_nouns.flatten!
+    else
+      @api_nouns = Api::Noun.page params[:page]
+      
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @api_nouns }
     end
   end
+
 
   # GET /api/nouns/1
   # GET /api/nouns/1.json

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= bootstrap
 //= require 'jquery-ui-1.9.0.custom.min.js'
 //= require 'underscore-min.js'
 //= require 'select2.min.js'
@@ -21,7 +22,6 @@
 //= require 'api/haikus.js'
 //= require 'bootstrap.min.js'
 //= require_tree .
-
 /*  Fetch CS for old Haikus
 fetchOldHaiku = (haiku_id) ->
   url = "/api/haikus/#{haiku_id}.json"
