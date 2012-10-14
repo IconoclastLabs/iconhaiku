@@ -13,7 +13,7 @@
   .container
     %header.row
       .pull-center.span12
-        = image_tag "haiku_header.png"
+        = link_to image_tag("haiku_header.png"), root_path, class: "headLogo"
     #main.row
       .span12
         = yield
