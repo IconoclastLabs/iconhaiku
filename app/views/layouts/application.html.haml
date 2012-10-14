@@ -19,4 +19,6 @@
         = yield
     %footer.row
       = render 'partials/footer'
+  - if Rails.env.production?
+    = render 'partials/ganalytics'
 
