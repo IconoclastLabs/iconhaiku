@@ -122,3 +122,17 @@ li.tile
   opacity: 0.5;
   margin-bottom: -7%;;
 }
+
+.haikuLine
+{
+  min-height: 70px;
+  border-radius: 5px;
+}
+
+#deleteLine
+{
+  border: 3px dotted #f00;
+  opacity: 0.5;
+  width: 200px;
+  background-image: image-url("delete_back.png");
+}

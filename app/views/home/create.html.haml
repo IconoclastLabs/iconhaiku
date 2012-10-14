@@ -5,27 +5,12 @@
     %ul#haiku{:"data-update-url" => "/api/haikus.json"}
       %li
         %ul#line1.haikuLine{:"data-limit" => 5}
-          %li.tile#24 First
-          %li.tile#2 Second
-          %li.tile#34 Third
-          %li.tile#223 Fourth
-          %li.tile#777 Fifth
       %li
         %ul#line2.haikuLine{:"data-limit" => 7}
-          %li.tile#line2_6 Sixth
-          %li.tile#line2_7 Seventh
-          %li.tile#line2_8 Eigth
-          %li.tile#line2_9 Ninth
-          %li.tile#line2_10 Tenth
-          %li.tile#line2_11 Eleventh
-          %li.tile#line2_12 Twelveth
       %li  
         %ul#line3.haikuLine{:"data-limit" => 5}
-          %li.tile#line3_13 Thirteenth
-          %li.tile#line3_14 Fourteenth
-          %li.tile#line3_15 Fifteenth
-          %li.tile#line3_16 Sixteenth
-          %li.tile#line3_17 Seventeenth
+      %li
+        %ul#deleteLine.haikuLine{:"data-limit" => 0}
   .span3#app{ :'ng-app' => 'NounApp', :'ng-controller' => 'NounCtrl' }
     %h3.script-font
       Choose wisely:

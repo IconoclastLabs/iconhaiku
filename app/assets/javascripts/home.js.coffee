@@ -6,7 +6,7 @@
 haiku = new Object
 
 jQuery ->
-  $('#line1, #line2, #line3').sortable
+  $('#line1, #line2, #line3, #deleteLine').sortable
     connectWith: ".haikuLine"
     update: ->
       limitRows()
