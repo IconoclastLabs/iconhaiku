@@ -25,7 +25,7 @@ fetchNewHaiku = ->
   # Create a blank haiku object
   $.ajax '/api/haikus/new.json',
   success  : (res, status, xhr) ->
-    console.log(res)
+    #console.log(res)
     haiku = res
   error    : (xhr, status, err) ->
     alert("Unable to build Haiku Object - Sum Ting Wong")

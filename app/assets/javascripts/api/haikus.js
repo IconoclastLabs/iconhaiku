@@ -40,10 +40,12 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
     var page = 1;
     $scope.nouns = [];
     $scope.tags = [];
-    $scope.loadMore = function(param){
+    $scope.loadMore = function(tags){
       //console.log("Try to load more icons");
-      console.log(param);
-      Nouns.index({page: page}, 
+      console.log(tags);
+      Nouns.index({
+        page: page
+        }, 
         function(nouns){
           _.each(nouns, function(noun){
             $scope.nouns.push(noun);
@@ -65,14 +67,16 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
       console.log("tags updated");
       // reset page position
       $scope.nouns = [];
-      $scope.loadMore("test");
+      $scope.$apply();
+      var input_tags = $('#tagSelect').val().split(",");
+      $scope.loadMore(input_tags);
       // query loadMore with tag list
-      console.log($('#tagSelect'));
+      //console.log($('#tagSelect'));
     })
     
     var dfd = $.Deferred();
     dfd.done(
-            $scope.loadMore(),
+            $scope.loadMore("Hello"),
             $scope.loadTags(),
             $('#tagSelect').select2({tags:$scope.tags})
     );
