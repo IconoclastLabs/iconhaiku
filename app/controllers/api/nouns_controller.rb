@@ -16,7 +16,8 @@ class Api::NounsController < ApplicationController
 
       @api_nouns = Api::Noun.find_all_by_name(@tag_names)
 
-      #@api_nouns.push Api::Noun.find_all_by_id(@nouns)
+      @api_nouns.push Api::Noun.find_all_by_id(@nouns)
+      @api_nouns.flatten!
     else
       @api_nouns = Api::Noun.page params[:page]
       
