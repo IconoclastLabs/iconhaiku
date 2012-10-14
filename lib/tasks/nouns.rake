@@ -4,8 +4,9 @@ namespace :nouns do
     #/Users/mattgarrison/Dropbox/IconoclastLabs/all\ icons/noun_project_614.svg 
 
 
-    (1040..1080).each do |number|
+    (1000..2000).each do |number|
       begin
+        sleep(5.seconds)
         @url = "http://thenounproject.com/en-us/search/?q=#{number}"
         agent = Mechanize.new
         page = agent.get(@url)
@@ -28,7 +29,7 @@ namespace :nouns do
           source_url:@url,
           license:@license[0],
           attribution:@attribution[0],
-          icon: File.open("/Users/mattgarrison/Dropbox/IconoclastLabs/all\ icons/noun_project_#{number}.svg")
+          icon: File.open("http://dl.dropbox.com/u/7801541/all%20icons/noun_project_#{number}.svg")
         )
         
         # Create a tag with the noun's name itself
