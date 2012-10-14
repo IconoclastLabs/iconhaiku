@@ -1,10 +1,38 @@
-.row
+.row{:'ng-controller' => "HaikuCtrl"}
   .span12
-    %h2
+    %h2.script-font
       = @haiku.name
   .row
     .span11.offset1
-      Test
+      %ul#haiku{:"data-update-url" => "/api/haikus.json"}
+      %li
+        %ul.haikuLine{:"data-limit" => 5}
+          %img{:src=>"#{@nouns[@haiku.line1_slot1_id]}", id:"#{@haiku.line1_slot1_id}"}
+          %img{:src=>"#{@nouns[@haiku.line1_slot2_id]}", id:"#{@haiku.line1_slot2_id}"}
+          %img{:src=>"#{@nouns[@haiku.line1_slot3_id]}", id:"#{@haiku.line1_slot3_id}"}
+          %img{:src=>"#{@nouns[@haiku.line1_slot4_id]}", id:"#{@haiku.line1_slot4_id}"}
+          %img{:src=>"#{@nouns[@haiku.line1_slot5_id]}", id:"#{@haiku.line1_slot5_id}"}
+          
+      %li
+        %ul.haikuLine{:"data-limit" => 7}
+          %img{:src=>"#{@nouns[@haiku.line2_slot1_id]}", id:"#{@haiku.line2_slot1_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot2_id]}", id:"#{@haiku.line2_slot2_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot3_id]}", id:"#{@haiku.line2_slot3_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot4_id]}", id:"#{@haiku.line2_slot4_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot5_id]}", id:"#{@haiku.line2_slot5_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot6_id]}", id:"#{@haiku.line2_slot6_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot7_id]}", id:"#{@haiku.line2_slot7_id}" ,alt:"Test"}
+      %li  
+        %ul.haikuLine{:"data-limit" => 5}
+          %img{:src=>"#{@nouns[@haiku.line3_slot1_id]}", id:"#{@haiku.line3_slot1_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line3_slot2_id]}", id:"#{@haiku.line3_slot2_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line3_slot3_id]}", id:"#{@haiku.line3_slot3_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line3_slot4_id]}", id:"#{@haiku.line3_slot4_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line3_slot5_id]}", id:"#{@haiku.line3_slot5_id}" ,alt:"Test"}
   .row
     .span12
       Share this on Twitter!
+      %a.twitter-share-button{href:"https://twitter.com/share", :'data-text'=>"Checkout this Icon Haiku", :'data-url' => "http://www.iconhaiku.com/share/#{@haiku.slug}",:'data-size'=>"large", :'data-hashtags' => "iconhaiku"}
+        Tweet
+        = render('twitter')
+        
