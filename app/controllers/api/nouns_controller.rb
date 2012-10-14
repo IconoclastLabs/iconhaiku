@@ -2,7 +2,7 @@ class Api::NounsController < ApplicationController
   # GET /api/nouns
   # GET /api/nouns.json
   def index
-    @api_nouns = Api::Noun.all
+    @api_nouns = Api::Noun.page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

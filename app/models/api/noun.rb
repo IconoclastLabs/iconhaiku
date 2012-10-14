@@ -16,7 +16,7 @@
 #
 
 class Api::Noun < ActiveRecord::Base
-
+  paginates_per 15
   attr_accessible :attribution, :license, :name, :icon, :source_url
   has_many :noun_tags
   has_many :tags, through: :noun_tags
