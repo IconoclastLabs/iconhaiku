@@ -33,20 +33,18 @@
     .tags
       %input{type:"hidden", id:"tagSelect", style:"width:250px", value:""}
 
-    %ul#library{:'when-scrolled' => "loadMore()"}
+    %ul#library{:'when-scrolled' => "loadMore('')"}
       %li.tile{:'ng-repeat'=>'noun in nouns', draggable: ""}
         %img{:id => "{{noun.id}}", :rel => "tooltip",:'ng-src' => "{{noun.icon_url}}", :alt => '{{noun.name}}, {{noun.attribution}}'}
         -#Name: {{noun.name}}, Attribution: {{noun.attribution}}
 .row.well
-  %h4.span2
+  %h4.span5
     Title Your Haiku
-  .span4
     %input#haikuTitle{type: "text", required: "required"}
-.row  
-  .span12
+  .offset1
+  .span5
     %a#saveButton.btn
-      %h4.script-font
-        = image_tag "save.png"
+      %h5
         Save Haiku
   .clearfix
 

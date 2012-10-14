@@ -1,6 +1,7 @@
 var nounApp = angular.module('NounApp', ['ngResource']);
 
 nounApp.directive('whenScrolled', [function($scope){
+  console.log("scrolled")
   return function($scope, elm, attr){
     var raw = elm[0];
     elm.bind('scroll', function(){
@@ -80,7 +81,7 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
     
     var dfd = $.Deferred();
     dfd.done(
-            $scope.loadMore("Hello"),
+            $scope.loadMore(''),
             $scope.loadTags(),
             $('#tagSelect').select2({tags:$scope.tags})
     );
