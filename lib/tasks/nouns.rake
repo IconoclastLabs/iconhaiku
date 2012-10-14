@@ -29,7 +29,7 @@ namespace :nouns do
           source_url:@url,
           license:@license[0],
           attribution:@attribution[0],
-          icon: File.open("http://dl.dropbox.com/u/7801541/all%20icons/noun_project_#{number}.svg")
+          icon: File.open("/root/all icons/noun_project_#{number}.svg")
         )
         
         # Create a tag with the noun's name itself
