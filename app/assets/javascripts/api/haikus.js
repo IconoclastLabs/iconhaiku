@@ -36,6 +36,9 @@ nounApp.factory('Nouns', ['$resource', function($resource){
 nounApp.factory('Tags', ['$resource', function($resource){
   return $resource('api/tags.json', {}, {'index': {method:'GET', isArray: true }});
 }]);
+nounApp.factory('Haikus', ['$resource', function($resource){
+  return $resource('api/haikus.json')
+}]);
 
 nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Nouns, Tags){
     var page = 1;

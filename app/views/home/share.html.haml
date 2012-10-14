@@ -1,26 +1,34 @@
-.row
+.row{:'ng-controller' => "HaikuCtrl"}
   .span12
     %h2
       = @haiku.name
   .row
     .span11.offset1
-      = @haiku.line1_slot1_id
-      = @haiku.line1_slot2_id 
-      = @haiku.line1_slot3_id 
-      = @haiku.line1_slot4_id 
-      = @haiku.line1_slot5_id 
-      = @haiku.line2_slot1_id 
-      = @haiku.line2_slot2_id 
-      = @haiku.line2_slot3_id 
-      = @haiku.line2_slot4_id 
-      = @haiku.line2_slot5_id 
-      = @haiku.line2_slot6_id 
-      = @haiku.line2_slot7_id 
-      = @haiku.line3_slot1_id 
-      = @haiku.line3_slot2_id 
-      = @haiku.line3_slot3_id 
-      = @haiku.line3_slot4_id 
-      = @haiku.line3_slot5_id
+      %ul#haiku{:"data-update-url" => "/api/haikus.json"}
+      %li
+        %ul.haikuLine{:"data-limit" => 5}
+          %img{:src=>"#{@nouns[@haiku.line1_slot1_id]}", id:"#{@haiku.line1_slot1_id}"}
+          %img{:src=>"#{@nouns[@haiku.line1_slot2_id]}", id:"#{@haiku.line1_slot2_id}"}
+          %img{:src=>"#{@nouns[@haiku.line1_slot3_id]}", id:"#{@haiku.line1_slot3_id}"}
+          %img{:src=>"#{@nouns[@haiku.line1_slot4_id]}", id:"#{@haiku.line1_slot4_id}"}
+          %img{:src=>"#{@nouns[@haiku.line1_slot5_id]}", id:"#{@haiku.line1_slot5_id}"}
+          
+      %li
+        %ul.haikuLine{:"data-limit" => 7}
+          %img{:src=>"#{@nouns[@haiku.line2_slot1_id]}", id:"#{@haiku.line2_slot1_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot2_id]}", id:"#{@haiku.line2_slot2_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot3_id]}", id:"#{@haiku.line2_slot3_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot4_id]}", id:"#{@haiku.line2_slot4_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot5_id]}", id:"#{@haiku.line2_slot5_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot6_id]}", id:"#{@haiku.line2_slot6_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line2_slot7_id]}", id:"#{@haiku.line2_slot7_id}" ,alt:"Test"}
+      %li  
+        %ul.haikuLine{:"data-limit" => 5}
+          %img{:src=>"#{@nouns[@haiku.line3_slot1_id]}", id:"#{@haiku.line3_slot1_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line3_slot2_id]}", id:"#{@haiku.line3_slot2_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line3_slot3_id]}", id:"#{@haiku.line3_slot3_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line3_slot4_id]}", id:"#{@haiku.line3_slot4_id}" ,alt:"Test"}
+          %img{:src=>"#{@nouns[@haiku.line3_slot5_id]}", id:"#{@haiku.line3_slot5_id}" ,alt:"Test"}
   .row
     .span12
       Share this on Twitter!
