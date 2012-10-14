@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 #
 
+haiku = new Object
+
 jQuery ->
   $('#line1, #line2, #line3').sortable
     connectWith: ".haikuLine"
@@ -20,12 +22,14 @@ jQuery ->
   fetchNewHaiku()
 
 fetchNewHaiku = ->
+  # Create a blank haiku object
   $.ajax '/api/haikus/new.json',
   success  : (res, status, xhr) ->
     console.log(res)
+    haiku = res
   error    : (xhr, status, err) ->
+    alert("Unable to build Haiku Object - Sum Ting Wong")
   complete : (xhr, status) ->
-
 
 limitRows = -> 
   $(".haikuLine").each ->
@@ -40,15 +44,23 @@ showPendingDoom = (event, ui) ->
 
 saveHaiku = ->
   #$.post($(@).data('update-url'))
-  #alert($(@).sortable('serialize'))
+  # hydrate the haiku object
   line1 = readLine("line1")
   line2 = readLine("line2")
   line3 = readLine("line3")
-  haiku = line1 + line2 + line3
-  console.log (haiku)
+  haiku.name = $("#haikuTitle").val()
+  sendJSON = api_haiku: 
+    haiku
+  console.log (sendJSON)
+  $.ajax
+    type: "POST"
+    url: $("#haiku").data('update-url')
+    data: sendJSON
+    success: (res, status, xhr) ->
+      console.log(res)
 
 readLine = (line) ->
-  index = 0
-  _.map $("#" + line).children(), (child) ->
-    index++
-    line + "_slot" + index + "_id=" + $(child).attr("id")
+  $("#" + line).children().each (index) ->
+    i = index + 1
+    key = line + "_slot" + i + "_id"
+    haiku[key] = $(@).attr("id")

@@ -28,7 +28,7 @@ class Api::HaikusController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @api_haiku }
+      format.json { render json: @api_haiku.to_json(except: [:id, :created_at, :slug, :updated_at])  }
     end
   end
 
