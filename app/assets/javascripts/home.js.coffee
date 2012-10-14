@@ -32,6 +32,14 @@ showPendingDoom = (event, ui) ->
 saveHaiku = ->
   #$.post($(@).data('update-url'))
   #alert($(@).sortable('serialize'))
-  haiku = _.map $("#line1, #line2, #line3").children(), (child) ->
-    $(child).text()
+  line1 = readLine("line1")
+  line2 = readLine("line2")
+  line3 = readLine("line3")
+  haiku = line1 + line2 + line3
   alert(haiku)
+
+readLine = (line) ->
+  index = 0
+  _.map $("#" + line).children(), (child) ->
+    index++
+    line + "_slot" + index + "_id=" + $(child).attr("id")
