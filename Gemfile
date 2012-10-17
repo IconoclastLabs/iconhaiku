@@ -5,7 +5,6 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -55,10 +54,12 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'nokogiri'
+  gem 'sqlite3'
   gem 'mechanize'
 end
 
 group :production do
   #gem 'mysql2' # If using mysql in development, this can be outside the production group.
   gem 'therubyracer'
+  gem 'pg'
 end
