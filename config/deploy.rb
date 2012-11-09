@@ -29,8 +29,9 @@ require 'bundler/capistrano'
 #############################################
 
 #GITHUB_REPOSITORY_NAME = 'r12-team-223'
-LINODE_SERVER_HOSTNAME = '198.58.101.71'
-
+LINODE_SERVER_HOSTNAME = "198.58.101.71"
+ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa.bowser-deployer")]
+default_run_options[:pty] = true
 #############################################
 #############################################
 
@@ -43,9 +44,9 @@ set :deploy_to,                  "/var/www/apps/iconhaiku"
 set :normalize_asset_timestamps, false
 set :rails_env,                  "production"
 
-set :user,                       'mattgarrison'
-set :runner,                     "www-data"
-set :admin_runner,               "www-data"
+set :user,                       'deployer'
+set :runner,                     "deployer"
+set :admin_runner,               "deployer"
 
 # Password-less Deploys (Optional)
 #
