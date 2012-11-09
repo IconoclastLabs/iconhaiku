@@ -1,0 +1,13 @@
+development:
+  bucket: iconhaiku
+  access_key_id: AKIAJHEFWORI2WNZD3FA
+  secret_access_key: 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
+test:
+  bucket: iconhaiku
+  access_key_id: AKIAJHEFWORI2WNZD3FA
+  secret_access_key: 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
+production:
+  bucket: iconhaiku
+  access_key_id: AKIAJHEFWORI2WNZD3FA
+  secret_access_key: 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
+
