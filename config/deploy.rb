@@ -28,8 +28,8 @@ require 'bundler/capistrano'
 ##                                         ##
 #############################################
 
-GITHUB_REPOSITORY_NAME = 'r12-team-223'
-LINODE_SERVER_HOSTNAME = '74.207.253.15'
+#GITHUB_REPOSITORY_NAME = 'r12-team-223'
+LINODE_SERVER_HOSTNAME = '198.58.101.71'
 
 #############################################
 #############################################
@@ -38,12 +38,12 @@ LINODE_SERVER_HOSTNAME = '74.207.253.15'
 
 set :bundle_flags,               "--deployment"
 
-set :application,                "railsrumble"
-set :deploy_to,                  "/var/www/apps/railsrumble"
+set :application,                "iconhaiku"
+set :deploy_to,                  "/var/www/apps/iconhaiku"
 set :normalize_asset_timestamps, false
 set :rails_env,                  "production"
 
-set :user,                       "root"
+set :user,                       'mattgarrison'
 set :runner,                     "www-data"
 set :admin_runner,               "www-data"
 
@@ -60,7 +60,7 @@ set :admin_runner,               "www-data"
 
 # SCM Options
 set :scm,        :git
-set :repository, "git@github.com:railsrumble/#{GITHUB_REPOSITORY_NAME}.git"
+set :repository, "git@bitbucket.org:iconoclastlabs/iconhaiku.git"
 set :branch,     "master"
 
 # Roles
