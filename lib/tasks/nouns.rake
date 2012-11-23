@@ -4,7 +4,7 @@ namespace :nouns do
     #/Users/mattgarrison/Dropbox/IconoclastLabs/all\ icons/noun_project_614.svg 
 
 
-    (1000..2000).each do |number|
+    (1000..5000).each do |number|
       begin
         sleep(5.seconds)
         @url = "http://thenounproject.com/en-us/search/?q=#{number}"
@@ -25,22 +25,26 @@ namespace :nouns do
         #p @tags
         #@tags = @doc.css("#icon-inner-container li").children.map{|c| c.text}
         
-        @noun = Api::Noun.create(
-          name:@icon_name[0],
-          source_url:@url,
-          license:@license[0],
-          attribution:@attribution[0],
-          icon: File.open("/home/deployer/noun_icons/noun_project_#{number}.svg")
-        )
-        
-        # Create a tag with the noun's name itself
-        @tag = Api::Tag.create(name: @noun.name)
-        @noun_tag = Api::NounTag.create(noun_id: @noun.id, tag_id: @tag.id)
-        # create each tag from scraped data and then add it to the noun
-        @tags.each do |tag| 
-          p "Tagname: #{tag} for #{@noun.name}"
-          @tag = Api::Tag.create(name: tag)
+        if Api::Noun.find_by_name(@icon_name[0]).nil?
+          @noun = Api::Noun.create(
+            name:@icon_name[0],
+            source_url:@url,
+            license:@license[0],
+            attribution:@attribution[0],
+            icon: File.open("/home/deployer/noun_icons/noun_project_#{number}.svg")
+          )
+          
+          # Create a tag with the noun's name itself
+          @tag = Api::Tag.create(name: @noun.name)
           @noun_tag = Api::NounTag.create(noun_id: @noun.id, tag_id: @tag.id)
+          # create each tag from scraped data and then add it to the noun
+          @tags.each do |tag| 
+            p "Tagname: #{tag} for #{@noun.name}"
+            @tag = Api::Tag.create(name: tag)
+            @noun_tag = Api::NounTag.create(noun_id: @noun.id, tag_id: @tag.id)
+          end
+        else
+          p "#{number} - #{@icon_name[0]} Already In DB"
         end
       rescue => exception
         p "Crap! #{exception.inspect}"
