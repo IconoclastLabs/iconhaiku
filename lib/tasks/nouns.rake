@@ -18,8 +18,9 @@ namespace :nouns do
         @response = page.content
         @doc = Nokogiri::HTML(@response)
         @icon_name = @doc.search('//*[@id="icon"]/div/header/div[1]/h1').children.map{|c| c.text}
-        @attribution = @doc.search('//*[@id="attribute"]').children.map{|c| c.text}
         @license = @doc.search('//*[@id="under-icon"]/div/p').children.map{|c| c.text}
+        @attribution = @doc.css("#icon-#{number}").attribute('data-designer').value
+        #p @attribution
         @tags = @doc.css("#icon-#{number}").attribute('data-tags').value.split(',')
         #p @tags
         #@tags = @doc.css("#icon-inner-container li").children.map{|c| c.text}
