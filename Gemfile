@@ -25,6 +25,7 @@ gem 'paperclip'
 gem "activeadmin"
 gem "kaminari"
 gem "aws-s3"
+gem "aws-sdk"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -49,7 +50,7 @@ gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
 gem "email_spec", ">= 1.2.1", :group => :test
 gem "bootstrap-sass", ">= 2.1.0.0"
 gem "quiet_assets", ">= 1.0.1", :group => :development
-
+gem "mechanize"
 group :development do
   gem 'annotate'
   gem 'pry'

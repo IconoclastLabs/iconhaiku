@@ -30,7 +30,7 @@ namespace :nouns do
           source_url:@url,
           license:@license[0],
           attribution:@attribution[0],
-          icon: File.open("/root/all icons/noun_project_#{number}.svg")
+          icon: File.open("/home/deployer/noun_icons/noun_project_#{number}.svg")
         )
         
         # Create a tag with the noun's name itself
@@ -42,8 +42,8 @@ namespace :nouns do
           @tag = Api::Tag.create(name: tag)
           @noun_tag = Api::NounTag.create(noun_id: @noun.id, tag_id: @tag.id)
         end
-      rescue
-        p "Crap!"
+      rescue => exception
+        p "Crap! #{exception.inspect}"
       end
 
     end 
