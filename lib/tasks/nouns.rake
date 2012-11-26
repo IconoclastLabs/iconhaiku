@@ -42,8 +42,8 @@ namespace :nouns do
           @tag = Api::Tag.create(name: tag)
           @noun_tag = Api::NounTag.create(noun_id: @noun.id, tag_id: @tag.id)
         end
-      rescue
-        p "Crap!"
+      rescue => exception
+        p "Crap! #{exception.inspect}"
       end
 
     end 
