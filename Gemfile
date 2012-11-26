@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -55,9 +55,20 @@ group :development do
   gem 'annotate'
   gem 'pry'
   gem 'pry-rails'
+  #gem 'pry-debugger'
   gem 'nokogiri'
   gem 'sqlite3'
   gem 'mechanize'
+  gem 'guard'
+  gem "haml-rails", ">= 0.3.5"
+  #gem "hpricot", ">= 0.8.6"
+  #gem "ruby_parser", ">= 2.3.1"
+  #gem "email_spec", ">= 1.2.1", :group => :test
+  gem "rspec-rails", ">= 2.11.0"
+  gem 'guard-rspec'
+  gem 'guard-rails'
+  gem "guard-zeus"
+  gem "zeus"
 end
 
 group :production do
