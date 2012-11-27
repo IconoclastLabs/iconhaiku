@@ -47,4 +47,5 @@ class Api::Haiku < ActiveRecord::Base
                   :line3_slot3_id, 
                   :line3_slot4_id, 
                   :line3_slot5_id 
+  validates :name, :presence => true
 end
