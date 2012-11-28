@@ -25,9 +25,10 @@ namespace :nouns do
         #p @tags
         #@tags = @doc.css("#icon-inner-container li").children.map{|c| c.text}
         
-        if Api::Noun.find_by_name(@icon_name[0]).nil?
+        if Api::Noun.find_by_noun_number(number).nil?
           @noun = Api::Noun.create(
             name:@icon_name[0],
+            noun_number: number,
             source_url:@url,
             license:@license[0],
             attribution:@attribution,

@@ -13,6 +13,7 @@
 #  icon_file_size    :integer
 #  icon_updated_at   :datetime
 #  source_url        :text
+#  noun_number       :integer
 #
 
 require 'spec_helper'

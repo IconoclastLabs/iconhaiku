@@ -13,11 +13,12 @@
 #  icon_file_size    :integer
 #  icon_updated_at   :datetime
 #  source_url        :text
+#  noun_number       :integer
 #
 
 class Api::Noun < ActiveRecord::Base
   paginates_per 15
-  attr_accessible :attribution, :license, :name, :icon, :source_url
+  attr_accessible :attribution, :license, :name, :icon, :source_url, :noun_number
   has_many :noun_tags
   has_many :tags, through: :noun_tags
   has_attached_file :icon, 
