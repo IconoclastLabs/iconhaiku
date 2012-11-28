@@ -4,7 +4,7 @@ namespace :nouns do
     #/Users/mattgarrison/Dropbox/IconoclastLabs/all\ icons/noun_project_614.svg 
 
 
-    (1000..5000).each do |number|
+    (1..5000).each do |number|
       begin
         sleep(5.seconds)
         @url = "http://thenounproject.com/en-us/search/?q=#{number}"
