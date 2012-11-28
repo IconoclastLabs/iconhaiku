@@ -30,7 +30,7 @@ namespace :nouns do
             name:@icon_name[0],
             source_url:@url,
             license:@license[0],
-            attribution:@attribution[0],
+            attribution:@attribution,
             icon: File.open("/home/deployer/noun_icons/noun_project_#{number}.svg")
           )
           
