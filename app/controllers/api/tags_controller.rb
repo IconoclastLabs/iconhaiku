@@ -2,7 +2,7 @@ class Api::TagsController < ApplicationController
   # GET /api/tags
   # GET /api/tags.json
   def index
-    @api_tags = Api::Tag.all
+    @api_tags = Api::Tag.find(:all, :select => 'DISTINCT name')
 
     respond_to do |format|
       format.html # index.html.erb

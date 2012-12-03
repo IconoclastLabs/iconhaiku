@@ -55,7 +55,7 @@ group :development do
   gem 'annotate'
   gem 'pry'
   gem 'pry-rails'
-  #gem 'pry-debugger'
+  gem 'interactive_editor'
   gem 'nokogiri'
   gem 'sqlite3'
   gem 'mechanize'
