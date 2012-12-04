@@ -4,23 +4,30 @@ class Api::NounsController < ApplicationController
   def index
     unless params[:tags].empty?
       @tag_names = params[:tags].split(",").flatten
-      @tags = Api::Tag.find_all_by_name(@tag_names)
-      @nouns = []
-      @tags.each do |tag|
-        @nouns = tag.nouns.map do |noun|
-          p noun
-          @nouns.push(noun.id)
-        end
-      end
+      #@tags = Api::Tag.find_all_by_name(@tag_names)
+      # tags = []
+      # @tag_names.each do |name|
+      #   tags << Api::Tag.where("name LIKE '%#{name}%'")
+      # end
+      # tags.flatten!
+      # #binding.pry
+      # @nouns = []
+      # tags.each do |tag|
+      #   @nouns = tag.nouns.map do |noun|
+      #     p noun
+      #     @nouns.push(noun.id)
+      #   end
+      # end
 
 
       @api_nouns = Api::Noun.find_all_by_name(@tag_names)
 
       @api_nouns.push Api::Noun.find_all_by_id(@nouns)
       @api_nouns.flatten!
+      binding.pry
     else
       @api_nouns = Api::Noun.page params[:page]
-      
+
     end
     respond_to do |format|
       format.html # index.html.erb

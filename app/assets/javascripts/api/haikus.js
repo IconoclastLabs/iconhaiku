@@ -1,7 +1,7 @@
 var nounApp = angular.module('NounApp', ['ngResource']);
 
 nounApp.directive('whenScrolled', [function($scope){
-  console.log("scrolled")
+  //console.log("scrolled")
   return function($scope, elm, attr){
     var raw = elm[0];
     elm.bind('scroll', function(){
@@ -11,11 +11,6 @@ nounApp.directive('whenScrolled', [function($scope){
     });
   };
 }]);
-/*
- $('#library li.tile').draggable({
-      
-    });
-*/
 
 nounApp.directive('draggable', function() {
   return {
@@ -46,11 +41,11 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
     $scope.tags = [];
     $scope.loadMore = function(tags){
       //console.log("Try to load more icons");
-      console.log(tags);
+      //console.log(tags);
       Nouns.index({
           page: page,
           tags: tags
-        }, 
+        },
         function(nouns){
           _.each(nouns, function(noun){
             $scope.nouns.push(noun);
@@ -59,17 +54,32 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
       page += 1;
     };
     $scope.loadTags = function(){
-      console.log("Loading tags");
+      //console.log("Loading tags");
       Tags.index({}, function(tags){
         _.each(tags, function(tag){
           //console.log(tag.name)
           $scope.tags.push(tag.name);
+
         });
+        //console.log($scope.tags);
+      });
+      $('#tagSelect').select2({
+              tags: $scope.tags,
+              //tokenSeparators: [","],
+              createSearchChoice: function(term) {
+                console.log("Creating Search Choice")
+                return null;
+              }
+              //multiple: true,
+              //createSearchChoice: function(term, data){ return null; },
+              //matcher: function(term, text) {
+              //  return text.toUpperCase().indexOf(term.toUpperCase())>=0;
+              //}
       });
     };
 
     $('#tagSelect').on('change', function(){
-      console.log("tags updated");
+      //console.log("tags updated");
       // reset page position
       page = 1
       $scope.nouns = [];
@@ -81,12 +91,11 @@ nounApp.controller('NounCtrl', ['$scope', 'Nouns', 'Tags', function($scope, Noun
       // query loadMore with tag list
       //console.log($('#tagSelect'));
     })
-    
+
     var dfd = $.Deferred();
     dfd.done(
             $scope.loadMore(''),
-            $scope.loadTags(),
-            $('#tagSelect').select2({tags:$scope.tags})
+            $scope.loadTags()
     );
 }]);
 

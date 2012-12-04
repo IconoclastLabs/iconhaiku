@@ -28,10 +28,10 @@ fetchNewHaiku = ->
     #console.log(res)
     haiku = res
   error    : (xhr, status, err) ->
-    alert("Unable to build Haiku Object - Sum Ting Wong")
+    alert("Unable to build Haiku Object")
   complete : (xhr, status) ->
 
-limitRows = -> 
+limitRows = ->
   $(".haikuLine").each ->
     $(@).children().removeClass("dying")
     $(@).children().slice($(@).data('limit')).slideUp "normal", ->
@@ -49,7 +49,7 @@ saveHaiku = ->
   line2 = readLine("line2")
   line3 = readLine("line3")
   haiku.name = $("#haikuTitle").val()
-  sendJSON = api_haiku: 
+  sendJSON = api_haiku:
     haiku
   console.log (sendJSON)
   $.ajax
