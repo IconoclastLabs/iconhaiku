@@ -1,6 +1,6 @@
 == Icon Haiku
 
-In 2012, Iconoclast Labs entered the Rails Rumble and created IconHaiku.com
+In 2012, Iconoclast Labs entered the Rails Rumble and created IconHaiku.com[http://www.IconHaiku.com]
 For the most part this project was fun, and done.  But we're sharing the source on here, and welcome any creative
 fixes and or additions.
 
